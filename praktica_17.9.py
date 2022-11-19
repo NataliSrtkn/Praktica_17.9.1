@@ -18,6 +18,7 @@
 
 
 def binary_search(array, element, left, right):
+    # функция двоичного поиска
     if left > right:
         return False
     middle = (right + left) // 2
@@ -28,13 +29,14 @@ def binary_search(array, element, left, right):
     else:
         return binary_search(array, element, middle + 1, right)
 
-array = [int(x) for x in input('Напишите последовательность чисел: ').split()]
+array = [int(x) for x in input('Напишите последовательность чисел: ').split()] # пишем последовательность чисел
 try:
-    element = int(input("Введите целое число: "))
+    element = int(input("Введите целое число: "))                              # ввести с клавиатуры целое число и выполнить проверку на соответствие 
+                                                                               # введенных данных, тем которые запрашиваются в условии     
     if element % 1 == 0:
-        array.append(element)
+        array.append(element)                                                  # добавить введенное число в список 
         print("Список до сортировки: ", array)
-        array.sort()
+        array.sort()                                                           # отсортировать список
         print("Список после сортировки по возрастанию: ", array)
     else:
         print("введите корректное число")
